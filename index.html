@@ -1,0 +1,61 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script src="jquery.history.js"></script>
+<script>
+$(function(){
+	// Prepare
+	var History = window.History; // Note: We are using a capital H instead of a lower h
+	if ( !History.enabled ) {
+		 // History.js is disabled for this browser.
+		 // This is because we can optionally choose to support HTML4 browsers or not.
+		return false;
+	}
+
+	// Bind to StateChange Event
+	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+		var State = History.getState(); // Note: We are using History.getState() instead of event.state
+		History.log(State.data, State.title, State.url);
+		rootUrl = History.getRootUrl();
+		//alert(rootUrl);
+		subDir="tathva web"
+		relativeUrl = State.url.replace(rootUrl + subDir + '/', '');
+		//alert(rootUrl+" "+relativeUrl);
+		if(relativeUrl=="")
+		{
+			$("#box").removeClass("clicked");
+		}
+		else if(relativeUrl=="SASI")
+		{
+			$("#box").addClass("clicked");
+		}
+	});
+	$("#box").click(function(){
+	//$("#box").toggleClass("clicked");
+	//alert($("#box").attr("class"));
+	if($("#box").hasClass("clicked"))
+	History.pushState({state:1,rand:Math.random()}, "State 1", "http://localhost/tathva%20web/"); // logs {state:1,rand:"some random value"}, "State 1", "?state=1"
+	else
+		History.pushState({state:1,rand:Math.random()}, "State 1", "http://localhost/tathva%20web/SASI");
+});
+	})
+</script>
+<style>
+.normal
+{
+	width:30px;
+	height: 40px;
+	background-color:red;
+	-webkit-transition: all 2s; 
+}
+.clicked
+{
+	width:300px;
+	height: 400px;
+	background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div id ="box" class="normal"/>
+</html>

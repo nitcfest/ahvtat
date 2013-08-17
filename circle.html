@@ -1,0 +1,201 @@
+<html>
+<head>
+<style>
+body
+{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+#circont
+{
+	position:relative;
+	width:200px;
+	height: 200px;
+}
+.fullback
+{
+	background-size: 100% 100%; 
+	/*-webkit-transition: .5s opacity;*/
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.elem:hover {
+   
+}
+#container
+{
+
+	position:absolute;
+	width:200px;
+	height: 200px;
+	left: 40%;
+	-webkit-transition:1s all;
+}
+.movecenter
+{
+	top:35%;
+}
+.movedown
+{
+	top:90%;
+}
+#menublocks
+{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+}
+#test
+{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-image: url(item.png);
+	-webkit-transform-origin': 500% 500%
+	 -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 1.5s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+.menus
+{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+}
+#one
+{
+	background-image: url(5.png);
+	 -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 60s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+</style>
+<script src="jquery.js"></script>
+<script>
+var centery;
+var arcpics={
+	1:"red.png",
+	2:"gray.png",
+	3:"marine.png",
+	4:"blue.png",
+	5:"green.png",
+	0:"orange.png"
+}
+/*{
+	1:{
+		start:
+		end:
+	},
+	2:{
+		start:
+		end:
+	},
+	3:{
+		start:
+		end:
+	},
+	4:{
+		start:
+		end:
+	},
+	5:{
+		start:
+		end:
+	},
+	6:{
+		start:
+		end:
+	}
+}*/
+var angle=function(x,y)
+{
+	var ang=Math.atan(y/x)*57.2957795;
+	if(x<0)
+	{
+		ang=180+ang;
+	}
+	else if(x>0 && y<0)
+	{
+		ang=360+ang;
+	}
+	return ang;
+}
+var makecircle=function(obj){
+	var $cir=obj.container;
+	var $fullcir=$cir.append("<div class='fullback' style='position:absolute;top:0px;left:0px;width:"+$cir.width()+"px;height:"+$cir.height()+"px;background-image:url("+obj.fullcirurl+");'></div>").find(':last');
+	var $partcir=$cir.append("<div class='fullback' style='position:absolute;top:0px;left:0px;width:"+$cir.width()+"px;height:"+$cir.height()+"px;'></div>").find(':last');
+	//$cir.addClass("movecenter");
+	var centerx=$cir.offset().left+$cir.width()/2;
+	centery=$cir.offset().top+$cir.height()/2;
+	var centerxlocal=$cir.width()/2;
+	var centerylocal=$cir.height()/2;
+	var x,y,ang,num,oldnum=-1;
+	$partcir.css({
+            '-webkit-transform-origin': centerxlocal+ "px "+centerylocal+ "px"
+        });
+	$("#one").css({
+            '-webkit-transform-origin': centerxlocal+ "px "+centerylocal+ "px"
+        });
+	
+	$(document).bind("mousemove",function(event){
+		
+		x=event.pageX;
+		y=event.pageY;
+		ang=angle((x-centerx),(-(y-centery)));
+		num=ang/obj.baseangle;
+		num=num>>0;
+		//alert(num);
+		$partcir.css({
+            WebkitTransform: 'rotate(' + (-ang) + 'deg)'
+        });
+        if(num!=oldnum||oldnum==-1)
+        {
+        	oldnum=num;
+        	$partcir.css({
+        		"background-image":"url("+arcpics[num]+")"
+        	})
+        };
+		console.log(centerx,centery);
+	});
+	$(document).click(function(){
+		
+        centery=599;//$cir.offset().top+$cir.height()/2;
+		$cir.toggleClass("movedown","movecenter");
+		$cir.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+  function(e) {   
+        centery=$cir.position().top+$cir.height()/2;
+  });
+		console.log(centerx,centery);
+	});
+	//alert(centerx+" "+centery);
+}
+$(function(){
+	var obj={
+		container:$("#container"),
+		fullcirurl:"fullcir.png",
+		baseangle:60
+	};
+	makecircle(obj);
+})
+</script>
+</head>
+<body>
+<div id="container" class="movecenter">
+<div id="menublocks">
+	<div class="menus fullback" id="one"></div>
+</div>
+<!--<div id="test" class="fullback"></div>
+<div id="circont"></div>-->
+</div>
+</body>
+</html>

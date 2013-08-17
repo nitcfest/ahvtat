@@ -1,0 +1,29 @@
+<html>
+<head>
+	<style>
+		#sq
+		{
+			width: 300px;
+			height: 400px;
+			background-color: red;
+			-webkit-transition:height 2s,width 1s;
+
+		}
+		#sq:hover
+		{
+			width: 400px;
+			height: 60px;
+			-webkit-animation:myfirst 5s;
+		}
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0% {background:red;}
+			50% {background:yellow;}
+			100% {background:green;}
+		}
+	</style>
+</head>
+<body>
+	<div id= "sq"/>
+</body>
+</html>
