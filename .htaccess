@@ -1,0 +1,5 @@
+ErrorDocument 404 /market-tat/404.html
+
+RewriteEngine on
+
+RewriteRule ^([A-Za-z0-9]+)$ http://localhost/tathva13_main/?q=$1
