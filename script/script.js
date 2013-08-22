@@ -1,8 +1,8 @@
 var centery;
 	var arcpics={
 		1:"images/red.png",
-		2:"images/gray.png",
-		3:"images/marine.png",
+		2:"images/black.png",
+		3:"images/purple.png",
 		4:"images/blue.png",
 		5:"images/green.png",
 		0:"images/orange.png"
@@ -188,4 +188,22 @@ var makecircle=function(){
 $(function(){
 	
 	makecircle(obj);
+	$(window).click(function(){
+		$("#contentintro").addClass("show");
+		$("#container").one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+        	function(e) {   
+        		
+		$("#menu1").addClass("showmenu");
+		$("#mainmenus").addClass("pushright");
+		$("#contentintro").addClass("comefront");
+		$("#contentintro").addClass("pushright");
+        	});
+	})
+	$("#menu1").click(function(){
+		
+		$("#menu2").addClass("comefront");
+		$("#menu2").addClass("showmenu");
+        		$("#cont2").addClass("moveright");
+		
+	})
 })

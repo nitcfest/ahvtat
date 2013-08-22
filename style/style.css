@@ -3,6 +3,8 @@
 			margin: 0px;
 			padding: 0px;
 			overflow: hidden;
+			left: 500px;
+			background: url(bg.png);
 		}
 	#test2
 {
@@ -10,9 +12,87 @@ position: absolute;
 width: 50px;
 height: 30px;
 left: 40px;
-right: 30px;
 background-color: red;
 border-radius:40px; 
+}
+#contentintro
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: purple;
+	-webkit-transition:all .5s;
+}
+.goback
+{
+	z-index:-200;
+}
+.comefront
+{
+	z-index: 200;
+}
+.hide
+{
+	opacity: 0;
+}
+.show
+{
+	opacity: 1;
+}
+#mainmenus
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transition:all .5s;
+}
+.pushright
+{
+	left:20%;
+}
+#menu1
+	{
+		position: absolute;
+		width:20%;
+		background-color: blue;
+		height: 100%;
+	-webkit-transition:all .5s;
+	}
+	#menu2
+	{
+		position: absolute;
+		width:18%;
+		background-color: red;
+		height: 100%;
+	-webkit-transition:all .5s;
+	}
+	#cont2
+	{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	-webkit-transition:all .5s;
+		
+	}
+	#cont2.moveright
+	{
+		left: 2%;
+	}
+#menu1.hidemenu
+{
+	left:-20%;
+}
+#menu1.showmenu
+{
+	left: 0px;
+}
+#menu2.hidemenu
+{
+	left:-18%;
+}
+#menu2.showmenu
+{
+	left: 0px;
 }
 		#circont
 		{
