@@ -45,26 +45,31 @@ body *
 {
 	position: relative;
 	top:0px;
-	left: 0px;
+	left: -3px;
 	height: 80%;
 	width: 100%;
 	background-color: black;
-	border: 2px solid #d00355;
+	border-right: 4px solid #d00355;
 }
 .menuitem
 {
-	width: 98%;
+	width: 100%;
 	height: 8%;
 	position: relative;
 	background-color: black;
-	border: 2px solid #d00355;
+ 
 	-webkit-transition:all 2s;
 	color: grey;
 }
 .menuitem:hover
 {
-	-webkit-transition:all .2s;
+	/*-webkit-transition:all .2s;
+	background-color:  #d00355;*/
 	color: white;
+}
+.menuitem:active
+	{
+	background-color:  #d00355;
 }
 .submenuholder
 {
@@ -72,12 +77,11 @@ body *
 	position: absolute;
 	width: 0px;
 	height: 0px;
-	background-color: blue;
+	background-color: grey;
 	-webkit-transition:all .75s;
 	-webkit-transition-delay: .1s;
-	left:101%;
+	left:101.5%;
 	top:0px;
-	border: 2px solid #d00355;
 }
 .submenuholder .hide
 {
@@ -128,24 +132,203 @@ body *
 }
 .text
 {
-	width: 100%;
+	width: 80%;
 	position: absolute;
-	z-index: 2;
 	margin-top:5px; 
 	cursor: pointer;
 }
-
+#barcont
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.bar
+{
+	position: relative;
+	width: 100%;
+	height:0px;
+	background-color: #d00355;
+	margin-top:.1%;
+	-webkit-transition:all ease-in .25s;
+}
+.menuitem:hover .bar
+{
+	height:1px;
+	-webkit-transition:all ease-in .25s;
+}
 </style>
 </head>
 <body>
 <div id="menuholder" class="show">
 <div id="top"></div>
 <div id="menulist">
-	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
-	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
-	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
-	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
-	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div id="barcont">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+
+	<div class="bar"></div></div>
+	<div class="text"><p>TATHVA 13</p></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div id="barcont">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	
+	<div class="bar"></div></div><div class="text"><p>TATHVA 13</p></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div id="barcont">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	
+	<div class="bar"></div></div><div class="text"><p>TATHVA 13</p></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div id="barcont">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	
+	<div class="bar"></div></div><div class="text"><p>TATHVA 13</p></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div id="barcont">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+	
+	<div class="bar"></div></div><div class="text"><p>TATHVA 13</p></div><div class="submenuholder"></div></div>
 </div>
 </div>
 </body>
