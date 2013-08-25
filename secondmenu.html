@@ -1,0 +1,152 @@
+<html>
+<head>
+<style>
+p
+{
+	padding: 0px;
+	margin: 0px;
+}
+body 
+{
+	margin: 0px;
+	padding: 0px;
+	color: white;
+}
+body *
+{
+	margin: 0px;
+	padding: 0px;
+}
+#menuholder
+{
+	height: 100%;
+	width: 20%;
+	background-color: red;
+	position: absolute;
+}
+#menuhoder .hide
+{
+	left:-200px;
+}
+#menuholder .show
+{
+	left: 0px;
+}
+#top
+{
+	position: relative;
+	left: 0px;
+	top:0px;
+	height: 20%;
+	width: 100%;
+	background-color: green;
+}
+#menulist
+{
+	position: relative;
+	top:0px;
+	left: 0px;
+	height: 80%;
+	width: 100%;
+	background-color: black;
+	border: 2px solid #d00355;
+}
+.menuitem
+{
+	width: 98%;
+	height: 8%;
+	position: relative;
+	background-color: black;
+	border: 2px solid #d00355;
+	-webkit-transition:all 2s;
+	color: grey;
+}
+.menuitem:hover
+{
+	-webkit-transition:all .2s;
+	color: white;
+}
+.submenuholder
+{
+	opacity: 0;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background-color: blue;
+	-webkit-transition:all .75s;
+	-webkit-transition-delay: .1s;
+	left:101%;
+	top:0px;
+	border: 2px solid #d00355;
+}
+.submenuholder .hide
+{
+}
+.submenuholder:hover
+{
+	display: block;
+}
+.menuitem:hover .submenuholder
+{
+	opacity: 1;
+	display: block;
+	width: 200px;
+	height: 300px;
+}
+.red1
+{
+	position: absolute;
+	width: 0px;
+	background-color:#d00355;
+	top:0px;
+	height:100%;
+	left: 0px;
+	-webkit-transition:all ease-in .75s;
+}
+.red2
+{
+	position: absolute;
+	width: 0px;
+	background-color:#d00355;
+	top:0px;
+	height:100%;
+	right:0px;
+	-webkit-transition:all ease-in .75s;
+}
+.menuitem:hover .red1
+{
+	width:100%;
+}
+.menuitem:hover .red2
+{
+	width:100%;
+}
+.menuitem p
+{
+	text-align: center;
+	font-size:30px; 
+}
+.text
+{
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	margin-top:5px; 
+	cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div id="menuholder" class="show">
+<div id="top"></div>
+<div id="menulist">
+	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+	<div class="menuitem"><div class="text"><p>TATHVA 13</p></div><div class="red1"></div><div class="red2"></div><div class="submenuholder"></div></div>
+</div>
+</div>
+</body>
+</html>
